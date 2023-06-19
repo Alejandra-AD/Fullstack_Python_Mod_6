@@ -12,9 +12,11 @@
                         <img src="{% static 'kallejon_manga_app/img/logo_2.jpg' %}" alt="Logo de mi sitio web" class="img-fluid logo">
                     </a>
                 </div>
+                {% if user.is_authenticated %}
                 <div class="order-lg-2 order-1">
                     <span class="fs-2">!Bienvenido {{user.first_name}} {{user.last_name}}!</span>
                 </div>
+                {% endif %}
             </div>
 
             <form class="w-100 my-3  " role="search">
