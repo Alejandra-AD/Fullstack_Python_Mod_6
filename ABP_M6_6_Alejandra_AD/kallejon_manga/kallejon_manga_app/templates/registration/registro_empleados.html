@@ -7,7 +7,7 @@
         <div class="row align-items-center g-lg-5 py-5">
             <div class="col-lg-5">
                 <div class="text-center text-lg-start">
-                    <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">Registro de usuario</h1>
+                    <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">Registro</h1>
                     <h2 class="col-lg-10 fs-4">Regístrate para recibir las mejores ofertas!</h2>
                     <img src="{% static 'kallejon_manga_app/img/logo_2.jpg' %}" alt="Logo de mi sitio web" class="img-fluid logo">
                 </div>
@@ -18,7 +18,7 @@
                 
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="id_username" name="username" placeholder="Usuario" required>
-                        <label for="text">Nombre de usuario</label>
+                        <label for="text">Nombre usuario</label>
                     </div>
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="id_firstname" name="first_name" placeholder="Ingrese nombre" required>
@@ -46,6 +46,14 @@
                         {{ form.errors }}
                     </div>
                     {% endif %}
+                    <div class="form-floating mb-3">
+                        <select class="form-select" id="id_group_choice" name="group_choice" required>
+                            <option value="" selected disabled>Seleccione un grupo</option>
+                            <option value="grupo1">Grupo 1</option>
+                            <option value="grupo2">Grupo 2</option>
+                        </select>
+                        <label for="group_choice">Seleccione un grupo</label>
+                    </div>
                     <button class="w-100 btn btn-lg btn-dark" type="submit">Registrate</button>
                     <hr class="my-4">
                     {% comment %} <small class="text-body-secondary">By clicking Sign up, you agree to the terms of use.</small> {% endcomment %}

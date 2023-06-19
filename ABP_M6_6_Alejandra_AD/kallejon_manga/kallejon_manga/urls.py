@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.contrib.auth.views import LoginView, LogoutView
-from kallejon_manga_app.views import lista_usuario,HomeView,MaintenanceView,ProductsView,StoresView,DeliveryView,SignupView
+from kallejon_manga_app.views import lista_usuario,HomeView,MaintenanceView,ProductsView,StoresView,DeliveryView,SignupView,SignupEmployView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,4 +30,5 @@ urlpatterns = [
     path('registro/',SignupView.as_view(), name='registro'),
     path('login/',LoginView.as_view(), name='login'),
     path('logout/', LogoutView.as_view(), name='logout'),
+    path('empleados/',SignupEmployView.as_view(), name='empleados'),
 ]
