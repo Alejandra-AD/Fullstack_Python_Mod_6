@@ -16,7 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from kallejon_manga_app.views import lista_usuario,HomeView,MaintenanceView,ProductsView,StoresView,DeliveryView
+from kallejon_manga_app.views import lista_usuario,HomeView,MaintenanceView,ProductsView,StoresView,DeliveryView,SignupView
+    # LoginView,LogoutView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,4 +27,7 @@ urlpatterns = [
     path('productos/',ProductsView.as_view(), name='productos'),
     path('tiendas/',StoresView.as_view(), name='tiendas'),
     path('despacho/',DeliveryView.as_view(), name='envios'),
+    path('registro/',SignupView.as_view(), name='registro'),
+    # path('login/',LoginView.as_view(), name='Login'),
+    # path('logout/', LogoutView.as_view(), name='logout'),
 ]

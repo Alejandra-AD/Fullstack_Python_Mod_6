@@ -1,0 +1,56 @@
+{% extends 'kallejon_manga_app/base.html'%}
+{% load static %}
+{% block title %}Formulario de registro{% endblock %}
+
+{% block content %}
+    <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+        <div class="row align-items-center g-lg-5 py-5">
+            <div class="col-lg-5">
+                <div class="text-center text-lg-start">
+                    <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">Registro de usuario</h1>
+                    <h2 class="col-lg-10 fs-4">Regístrate para recibir las mejores ofertas!</h2>
+                    <img src="{% static 'kallejon_manga_app/img/logo_2.jpg' %}" alt="Logo de mi sitio web" class="img-fluid logo">
+                </div>
+            </div>
+            <div class="col-md-10 mx-auto col-lg-7">
+                <form method="post" class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
+                    {% csrf_token %}
+                
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="id_username" name="username" placeholder="Usuario" required>
+                        <label for="text">Nombre de usuario</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="id_firstname" name="first_name" placeholder="Ingrese nombre" required>
+                        <label for="text">Nombre</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="id_lastname" name="last_name" placeholder="Ingrese apellido" required>
+                        <label for="text">Apellido</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese un email" required>
+                        <label for="email">Dirección de correo</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="id_password1" name="password1" placeholder="Contraseña" required>
+                        <label for="password1">Contraseña</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="id_password2" name="password2" placeholder="Contraseña" required>
+                        <label for="password2">Repita su contraseña</label>
+                    </div>
+                    {% comment %} {% if form.errors %}
+                    <div class="alert alert-danger mt-3" role="alert">
+                        <h4>Errores</h4>
+                        {{ form.errors }}
+                    </div>
+                    {% endif %} {% endcomment %}
+                    <button class="w-100 btn btn-lg btn-dark" type="submit">Registrate</button>
+                    <hr class="my-4">
+                    {% comment %} <small class="text-body-secondary">By clicking Sign up, you agree to the terms of use.</small> {% endcomment %}
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
