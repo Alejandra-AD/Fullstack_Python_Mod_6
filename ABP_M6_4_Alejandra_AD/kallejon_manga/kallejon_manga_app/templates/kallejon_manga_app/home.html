@@ -1,0 +1,84 @@
+{% extends 'kallejon_manga_app/base.html'%}
+{%load static%}
+
+{% block title %}Kallejon Manga{% endblock %}
+
+{% block header%}
+    <header class="py-3 mb-4 border-bottom">
+        <div class="container d-flex flex-wrap justify-content-center">
+            <div class="d-lg-flex justify-content-center align-items-center text-center">
+                <div class="me-lg-3 order-lg-2 order-1">
+                    <a href="#">
+                        <img src="{% static 'kallejon_manga_app/img/logo_2.jpg' %}" alt="Logo de mi sitio web" class="img-fluid logo">
+                    </a>
+                </div>
+                <div class="order-lg-2 order-1">
+                    <span class="fs-2">!Bienvenido {{user.first_name}} {{user.last_name}}!</span>
+                </div>
+            </div>
+
+            <form class="w-100 my-3  " role="search">
+                <input type="search" class="form-control border-dark border-3" placeholder="Buscar..." aria-label="Search">
+            </form>
+        </div>
+    </header>
+{%endblock%}
+{%block content%} 
+<main>
+    <section>
+        <div
+            class=" position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-body-tertiary background-section">
+            <div class="col-md-6 p-lg-5 mx-auto my-5 text-light">
+                <h1 class="display-3 fw-bold">¡Explora el universo del manga en un solo lugar!</h1>
+                <h3 class="fw-normal mb-3 text-light">Tenemos todas tus tiendas de manga favoritas en un solo lugar.
+                    Compara precios y encuentra las mejores ofertas en mangas, figuras y mucho mas. </h3>
+            </div>
+            <div class="product-device shadow-sm d-none d-md-block"></div>
+            <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+        </div>
+
+        <div class="text-bg-dark pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden"
+            style="background-color: black!important">
+            <div class="my-4 py-3">
+                <h2 class="display-5 mb-3">Colección Mangas</h2>
+                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+            </div>
+            <div class="bg-body-tertiary shadow-sm mx-auto"
+                style="width: 80%; height: 500px; border-radius: 21px 21px 0 0; overflow: hidden;">
+                <img src="{% static 'kallejon_manga_app/img/manga.jpg' %}"
+                    style="width: 100%; height: 100%; object-fit: contain; object-position: center;"
+                    alt="Descripción de la imagen">
+            </div>
+        </div>
+
+        <div class="seccion-media bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+            <div class="my-4 p-3">
+                <h2 class="display-5">LLeva tus figuras!</h2>
+                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="bg-dark shadow-sm mx-auto"
+                style="width: 80%; height: 500px; border-radius: 21px 21px 0 0; overflow: hidden;">
+                <img src="{% static 'kallejon_manga_app/img/figuras.jpg' %}"
+                    style="width: 100%; height: 100%; object-fit: contain; object-position: center;"
+                    alt="Descripción de la imagen">
+            </div>
+        </div>
+
+        <div
+            class="seccion-inferior adicional text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+            <div class="my-4 py-3">
+                <h2 class="display-5">Cartas y mas...</h2>
+                <p class="lead my-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="bg-body-tertiary shadow-sm mx-auto"
+                style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
+                <img src="{%static 'kallejon_manga_app/img/cartas.jpg'%}"
+                    style="width: 100%; height: 100%; object-fit: contain; object-position: center;"
+                    alt="Descripción de la imagen">
+            </div>
+        </div>
+
+    </section>
+
+</main>
+{% endblock %}
